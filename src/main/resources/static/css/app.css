@@ -1,0 +1,35 @@
+body {
+    background-image: url(/images/vividBackground.jpg);
+    height: 500px; /* You must set a specified height */
+    background-position: center; /* Center the image */
+    /*background-repeat: no-repeat; /* Do not repeat the image */
+    background-size: cover; /* Resize the background image to cover the entire container */
+}
+
+footer {
+    font-size: 14px;
+    text-align: center;
+    margin-top: 19%;
+}
+
+/*h2 {
+    text-decoration: underline;
+}*/
+
+div {
+    text-align: center;
+}
+
+p {
+    font-size: 20px;
+    color: rgb(33, 129, 218);
+    display: block;
+    padding: 5px 12px;
+    border-radius: 8px;
+    margin: auto;
+    margin-top: 4px;
+    margin-bottom: 4px;
+    opacity: 0.9;
+    cursor: pointer;
+}
+

@@ -2,12 +2,18 @@
 <html xmlns:th="http://www.thymeleaf.org" xmlns:layout="http://www.ultraq.net.nz/thymeleaf/layout"
         layout:decorate="~{layout}">
     <head>
-        <title th:text="#{home.index.headline}" />
+        <title th:text="#{app.title}" />
     </head>
     <body>
         <div layout:fragment="content">
             <h1 th:text="#{home.index.headline}" class="mb-4" />
-            <p th:utext="#{home.index.text}" class="mb-5" />
+            <!--p th:utext="#{home.index.text}" class="mb-5" /-->
+            <td><h2>Main Menu</h2></td>  
+            <td><p>Create Contacts Book</p></td>
+            <td><p>Load Contacts Book</p></td>
+            <td><p>Search Contacts</p></td>
+            <td><p>List Contacts</p></td>
+            <td><p>Birthday Reminders</p></td>
         </div>
     </body>
 </html>
