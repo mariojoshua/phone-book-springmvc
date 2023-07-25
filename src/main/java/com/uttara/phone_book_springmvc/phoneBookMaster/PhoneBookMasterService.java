@@ -8,6 +8,7 @@ import java.util.stream.Collectors;
 import org.apache.el.stream.Stream;
 import org.springframework.core.ParameterizedTypeReference;
 import org.springframework.http.MediaType;
+import org.springframework.stereotype.Service;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.ResponseBody;
@@ -15,19 +16,18 @@ import org.springframework.web.reactive.function.client.WebClient;
 
 import reactor.core.publisher.Mono;
 
+@Service
 public class PhoneBookMasterService {
      WebClient webClient = WebClient.create("http://localhost:9090");
 
-    @GetMapping("/getAll")
-    //@ResponseBody
-     public List<PhoneBookMaster> findAll() {
+     public List<PhoneBookMaster> getAll() {
         List<PhoneBookMaster> result = webClient.get()
                                         .uri("/api/phoneBookMasters")
                                         .accept(MediaType.APPLICATION_JSON)
                                         .retrieve()
                                         .bodyToMono(new ParameterizedTypeReference<List<PhoneBookMaster>>() {})
                                         .block();  
-        result.forEach(one -> System.out.println(one.getName()));  
+        // result.forEach(one -> System.out.println(one.getName()));  
         return result;                                                                  
     }
     

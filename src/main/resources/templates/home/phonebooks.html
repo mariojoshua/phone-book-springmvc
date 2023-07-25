@@ -1,0 +1,25 @@
+<!DOCTYPE HTML>
+<html xmlns:th="http://www.thymeleaf.org" xmlns:layout="http://www.ultraq.net.nz/thymeleaf/layout"
+        layout:decorate="~{layout}">
+    <head>
+        <title>Phone Books</title>
+    </head>
+    <body>
+        <div layout:fragment="content">
+            <table class="table">
+                <thead>
+                    <tr>
+                        <th scope="col">ID</th>
+                        <th scope="col">Phone Book Name</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr th:each="phoneBookMaster: ${phoneBooks}">
+                        <td th:text="${phoneBookMaster.getId()}"></td>
+                        <td th:text="${phoneBookMaster.getName()}"></td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+    </body>
+</html>

@@ -24,12 +24,9 @@ public class HomeController {
 
     @GetMapping("/")
     public String index() {
-        System.out.println(new PhoneBookMasterService().findAll());
         return "home/index";
     }
 
-    // @GetMapping("/getAll")
-    // @ResponseBody
     
 
 }
