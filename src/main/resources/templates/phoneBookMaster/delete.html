@@ -2,15 +2,15 @@
 <html xmlns:th="http://www.thymeleaf.org" xmlns:layout="http://www.ultraq.net.nz/thymeleaf/layout"
         layout:decorate="~{layout}">
     <head>
-        <title>Add Phone Book</title>
+        <title th:text="${title}" />
     </head>
     <body>
         <div layout:fragment="content">
             <div>
-                <h1>Add Phone Book Master</h1>
+                <h1 th:text="${mainHeading}"/>
             </div>
             <div>
-            <form action="/phoneBookMasters/save" method="post">
+            <form action="/phoneBookMasters/delete" method="post">
                 <input type="text" id="name" name="name" placeholder="name">
                 <input type="submit">
             </form>

@@ -44,6 +44,16 @@ public class PhoneBookMasterService {
         return createdID;                                  
     }
 
+    public Long delete(String name) {
+        Long createdID = webClient.delete()
+                                  .uri("/api/phoneBookMasters/" + name)
+                                  .accept(MediaType.APPLICATION_JSON)
+                                  .retrieve()
+                                  .bodyToMono(Long.class)
+                                  .block();
+        return createdID;
+    }
+
 
     
 }

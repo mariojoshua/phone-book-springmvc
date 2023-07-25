@@ -9,6 +9,7 @@ import org.springframework.ui.Model;
 import org.springframework.validation.BindingResult;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.ModelAttribute;
+import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
@@ -34,15 +35,31 @@ public class PhoneBookController {
         }
 
         @GetMapping("/add")
-        public String add (@ModelAttribute("phoneBookMaster") final PhoneBookMaster phoneBookMaster) {
-            return "phoneBookMaster/add";
+        public String add (@ModelAttribute("phoneBookMaster") final PhoneBookMaster phoneBookMaster, Model model) {
+            model.addAttribute("title", "Add phonebook");
+            model.addAttribute("mainHeading", "Add a Phone Book name");
+            return "phoneBookMaster/nameInput";
         }
 
         @PostMapping("/save")
         public String createPhoneBookMaster(@ModelAttribute PhoneBookMaster phoneBookMaster) {
         System.out.println(phoneBookMaster.getName() + "result");    
         final Long createdId = phoneBookMasterService.create(phoneBookMaster);
-        return "phoneBookMaster/list";
+        return "home/index";
+        }
+
+        @GetMapping("/delete")
+        public String delete (@ModelAttribute("phoneBookMaster") final PhoneBookMaster phoneBookMaster, Model model) {
+            model.addAttribute("title", "Delete PhoneBook");
+            model.addAttribute("mainHeading", "Type a phone book name to delete");
+            return "phoneBookMaster/delete";
+        }
+
+        @PostMapping("/delete")
+        public String deletePhoneBookMaster(@ModelAttribute PhoneBookMaster phoneBookMaster) {
+        System.out.println(phoneBookMaster.getName() + "result"); 
+            phoneBookMasterService.delete(phoneBookMaster.getName());
+        return "home/index";
     }
     
 }
