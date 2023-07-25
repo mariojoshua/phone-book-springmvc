@@ -14,6 +14,7 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.ResponseBody;
 import org.springframework.web.reactive.function.client.WebClient;
 
+import jakarta.validation.Valid;
 import reactor.core.publisher.Mono;
 
 @Service
@@ -30,5 +31,19 @@ public class PhoneBookMasterService {
         // result.forEach(one -> System.out.println(one.getName()));  
         return result;                                                                  
     }
+
+    public Long create(PhoneBookMaster phoneBookMaster) {
+        System.out.println();
+        Long createdID = webClient.post()
+                                  .uri("/api/phoneBookMasters")
+                                  .accept(MediaType.APPLICATION_JSON)
+                                  .bodyValue(phoneBookMaster)
+                                  .retrieve()
+                                  .bodyToMono(Long.class)
+                                  .block();
+        return createdID;                                  
+    }
+
+
     
 }

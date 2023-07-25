@@ -1,15 +1,17 @@
 body {
     background-image: url(/images/vividBackground.jpg);
-    height: 500px; /* You must set a specified height */
+    height: 650px; /* You must set a specified height */
     background-position: center; /* Center the image */
     /*background-repeat: no-repeat; /* Do not repeat the image */
     background-size: cover; /* Resize the background image to cover the entire container */
 }
 
 footer {
+    position: absolute;
+    bottom: 0;
+    width: 100%;
     font-size: 14px;
     text-align: center;
-    margin-top: 19%;
 }
 
 /*h2 {
@@ -31,9 +33,11 @@ p, a {
     margin-bottom: 4px;
     opacity: 0.9;
     cursor: pointer;
+    box-sizing: border-box;
 }
 
 table {
     width: auto;
+    opacity: 0.85;
 }
 
