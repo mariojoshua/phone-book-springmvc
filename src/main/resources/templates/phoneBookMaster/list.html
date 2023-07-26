@@ -6,17 +6,29 @@
     </head>
     <body>
         <div layout:fragment="content">
+            <div>
+                <h1 class = "listH1">Your Phone Books</h1>
+                <form class="buttonForm"><button type="submit" class="listButton" formaction="/phoneBookMasters/add">Create new phone book</button></form>
+            </div>
             <table class="table">
                 <thead>
                     <tr>
                         <th scope="col">ID</th>
                         <th scope="col">Phone Book Name</th>
+                        <th></th>    
                     </tr>
                 </thead>
                 <tbody>
                     <tr th:each="phoneBookMaster: ${phoneBookMasters}">
                         <td th:text="${phoneBookMaster.getId()}"></td>
                         <td th:text="${phoneBookMaster.getName()}"></td>
+                        <td class="tdButton">
+                            <form>
+                            <button type="submit" class="openButton" formaction="/featureNotImplemented">Open</button>
+                            <button type="submit" class="editButton" formaction="/phoneBookMasters/edit">Edit</button>
+                            <button type="submit" class="deleteButton" formaction="/phoneBookMasters/delete" data-confirm-message="Do you really want to delete this element? This cannot be undone.">Delete</button>
+                            </form>
+                        </td>        
                     </tr>
                 </tbody>
             </table>

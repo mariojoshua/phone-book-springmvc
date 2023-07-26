@@ -14,6 +14,8 @@ import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestParam;
+import org.springframework.web.reactive.result.view.RedirectView;
+import org.springframework.web.servlet.ModelAndView;
 import org.springframework.web.servlet.mvc.support.RedirectAttributes;
 
 import jakarta.validation.Valid;
@@ -42,10 +44,10 @@ public class PhoneBookController {
         }
 
         @PostMapping("/save")
-        public String createPhoneBookMaster(@ModelAttribute PhoneBookMaster phoneBookMaster) {
+        public ModelAndView createPhoneBookMaster(@ModelAttribute PhoneBookMaster phoneBookMaster) {
         System.out.println(phoneBookMaster.getName() + "result");    
         final Long createdId = phoneBookMasterService.create(phoneBookMaster);
-        return "home/index";
+        return new ModelAndView("redirect:/phoneBookMasters");
         }
 
         @GetMapping("/delete")
@@ -56,10 +58,10 @@ public class PhoneBookController {
         }
 
         @PostMapping("/delete")
-        public String deletePhoneBookMaster(@ModelAttribute PhoneBookMaster phoneBookMaster) {
+        public ModelAndView deletePhoneBookMaster(@ModelAttribute PhoneBookMaster phoneBookMaster) {
         System.out.println(phoneBookMaster.getName() + "result"); 
             phoneBookMasterService.delete(phoneBookMaster.getName());
-        return "home/index";
+        return new ModelAndView("redirect:/phoneBookMasters");
     }
     
 }
