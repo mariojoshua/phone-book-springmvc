@@ -7,15 +7,14 @@
     <body>
         <div layout:fragment="content">
             <h1 th:text="#{home.index.headline}" class="mb-4" />
-            <!--p th:utext="#{home.index.text}" class="mb-5" /-->
                 <h2>Main Menu</h2> 
-                <a href="/phoneBookMasters/add">Create Contacts Book</a>
-                <p>Open Contacts Book</p>
-                <a href="/phoneBookMasters">View Contact Books</a>
-                <p>Rename Contacts Book</p>
-                <a href="/phoneBookMasters/delete">Delete Contacts Book</a>
-                <p>Search Contacts</p>
-                <p>List Contacts</p>
-                <p>Birthday Reminders</p>
-        </div>
+                <table align="center">
+                <td><a href="/phoneBookMasters/add">Open Phone Books</a></td>
+                <tr></tr>
+                <td><a href="/featureNotImplemented">List All Contacts</a></td>
+                <tr></tr>
+                <td><a href="/featureNotImplemented">Show Upcoming Birthday Reminders</a></td>
+                </table>    
+            </div>
     </body>
+</html>

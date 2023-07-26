@@ -27,6 +27,11 @@ public class HomeController {
         return "home/index";
     }
 
+    @GetMapping("/featureNotImplemented")
+    public String featureNotImplemented() {
+        return "home/featureNotImplemented";
+    }
+
     
 
 }

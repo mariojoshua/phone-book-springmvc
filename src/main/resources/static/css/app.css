@@ -1,5 +1,6 @@
 body {
-    background-image: url(/images/vividBackground.jpg);
+    /*background-image: url(/images/vividBackground.jpg);*/
+    background-image: url(https://img.freepik.com/free-photo/vivid-blurred-colorful-background_58702-2655.jpg?w=996&t=st=1690353917~exp=1690354517~hmac=b0e855f12797a9a081914544a11fb46e2d7a747cd256dc9261142abc07e70f75);
     height: 650px; /* You must set a specified height */
     background-position: center; /* Center the image */
     /*background-repeat: no-repeat; /* Do not repeat the image */
@@ -22,9 +23,9 @@ div {
     text-align: center;
 }
 
-p, a {
+a {
     font-size: 20px;
-    color: rgb(33, 129, 218);
+    color: rgb(42, 33, 218);
     display: block;
     padding: 5px 12px;
     border-radius: 8px;
@@ -34,10 +35,23 @@ p, a {
     opacity: 0.9;
     cursor: pointer;
     box-sizing: border-box;
+    font-style: normal;
 }
 
 table {
+    vertical-align: auto;
     width: auto;
     opacity: 0.85;
+}
+
+button {
+    padding: 5px;
+    margin-top: 20px;
+    height: auto;
+    font-size: large;
+    color: white;
+    background-color: blue;
+    border: blue;
+    border-radius: 8px;
 }
 
