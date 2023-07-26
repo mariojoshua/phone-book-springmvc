@@ -26,7 +26,8 @@
                             <form>
                             <button type="submit" class="openButton" formaction="/featureNotImplemented">Open</button>
                             <button type="submit" class="editButton" formaction="/phoneBookMasters/edit">Edit</button>
-                            <button type="submit" class="deleteButton" th:formaction="@{/phoneBookMasters/delete/{name}(name=${phoneBookMaster.getName()})}" formmethod="post" data-confirm-message="Do you really want to delete this element? This cannot be undone.">Delete</button>
+                            <button type="submit" class="deleteButton" th:formaction="@{/phoneBookMasters/delete/{name}(name=${phoneBookMaster.getName()})}" 
+                                formmethod="post" data-confirm-message="Do you really want to delete this element? This cannot be undone.">Delete</button>
                             </form>
                         </td>        
                     </tr>
