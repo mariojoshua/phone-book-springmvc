@@ -5,6 +5,7 @@
 https://github.com/mariojoshua/phone-book-springmvc/assets/75271182/23c996ab-91f5-4c86-b8ad-e3d305552091
 
 
+This app is a presentation layer app build off [phone-book-rest api](https://github.com/mariojoshua/phone-book-restapi), to run it first run the phone-book-rest api app and then run this.
 
 ## Development
 
